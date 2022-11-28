@@ -93,7 +93,7 @@ function UserPost(props) {
             </IconButton>
             {readyToDelete ? (
               <div className="delete" onClick={deleteThisPost}>
-                delete{" "}
+                Delete
               </div>
             ) : (
               <></>
@@ -117,6 +117,7 @@ function UserPost(props) {
             <FavoriteBorder
               className={liked ? "userPostHeartLiked" : "userpostheart"}
               onClick={likeOrUnlike}
+              style={{ cursor: "pointer" }}
             />
 
             <span className="userPostCounter">{shared.like}</span>
@@ -126,7 +127,11 @@ function UserPost(props) {
             />
           </div>
           <div className="userPostDownTwo">
-            <span className="userPostDownInput">
+            <span
+              className="userPostDownInput"
+              onClick={enableCommentInterface}
+              style={{ cursor: "pointer" }}
+            >
               {shared.comments !== undefined ? shared.comments.length : 0}
               {` - comments`}
             </span>

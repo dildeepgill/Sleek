@@ -54,13 +54,12 @@
 .navLink {
   margin-left: 22px;
   font-size: 16px;
-  cursor: pointer;
 }
 
 .navIcons {
   display: flex;
   font-size: 19px;
-  gap: 8px;
+  gap: 75px;
   width: 25%;
 }
 
@@ -90,9 +89,7 @@
   width: 29px;
   height: 29px;
   border-radius: 50%;
-
   object-fit: cover;
-  cursor: pointer;
 }
 
 @media (max-width: 1000px) {

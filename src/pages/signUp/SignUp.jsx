@@ -106,7 +106,7 @@ function SignUp() {
                 <button type="submit" className="SignUpRegBtn">
                   Sign Up
                 </button>
-                <Link to="/login">
+                <Link to="/enter">
                   <button className="SignUpLogBtn">Log into Account</button>
                 </Link>
                 {error && <span>You got an error</span>}

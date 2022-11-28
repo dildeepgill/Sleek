@@ -85,7 +85,10 @@ function AddSomething(props) {
           <div className="addSomethingEmojiDiv">
             <div className="addSomethingChoices">
               <label htmlFor="file" className="addSomethingChoice">
-                <PermMedia className="addSomethingIcon addSomething2" />
+                <PermMedia
+                  className="addSomethingIcon addSomething2"
+                  style={{ cursor: "pointer" }}
+                />
                 <span className="addSomethingText"></span>
                 <input
                   type="file"
@@ -99,7 +102,10 @@ function AddSomething(props) {
                 onClick={() => setShowEmojis(!showEmojis)}
                 className="addSomethingChoice"
               >
-                <EmojiEmotions className="addSomethingIcon addSomething3" />
+                <EmojiEmotions
+                  className="addSomethingIcon addSomething3"
+                  style={{ cursor: "pointer" }}
+                />
                 <span className="addSomethingText"></span>
               </div>
               <div className="addSomethingChoice">

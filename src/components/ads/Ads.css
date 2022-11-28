@@ -1,11 +1,7 @@
 .ads {
   flex: 3;
 }
-.adsEditProfile {
-  text-align: left;
-  cursor: pointer;
-  font-size: 20px;
-}
+
 .aboutMeAbove {
   display: flex;
   flex-direction: column;
@@ -27,7 +23,6 @@
 
 .aboutMeCoverImg {
   width: 100%;
-
   object-fit: cover;
 }
 
@@ -48,6 +43,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .aboutMeInfoName {
@@ -61,6 +57,30 @@
 
 .aboutMeCoverBotttom {
   display: flex;
+}
+
+.adsEditProfile {
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 13px;
+  height: 30px;
+  background-color: rgb(134, 77, 134);
+  color: black;
+  padding: 0 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  max-width: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adsEditProfile:hover {
+  background-color: rgb(96, 72, 96);
 }
 
 @media (max-width: 770px) {
