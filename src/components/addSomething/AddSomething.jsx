@@ -82,42 +82,45 @@ function AddSomething(props) {
           </div>
         )}
         <div className="addSomethingBottom">
-          <div className="addSomethingChoices">
-            <label htmlFor="file" className="addSomethingChoice">
-              <PermMedia className="addSomethingIcon addSomething2" />
-              <span className="addSomethingText"></span>
-              <input
-                type="file"
-                id="file"
-                accept=".png,.jpeg,.jpg"
-                style={{ display: "none" }}
-                onChange={(e) => setImg(e.target.files[0])}
-              />
-            </label>
-            <div
-              onClick={() => setShowEmojis(!showEmojis)}
-              className="addSomethingChoice"
-            >
-              <EmojiEmotions className="addSomethingIcon addSomething3" />
-              <span className="addSomethingText"></span>
+          <div className="addSomethingEmojiDiv">
+            <div className="addSomethingChoices">
+              <label htmlFor="file" className="addSomethingChoice">
+                <PermMedia className="addSomethingIcon addSomething2" />
+                <span className="addSomethingText"></span>
+                <input
+                  type="file"
+                  id="file"
+                  accept=".png,.jpeg,.jpg"
+                  style={{ display: "none" }}
+                  onChange={(e) => setImg(e.target.files[0])}
+                />
+              </label>
+              <div
+                onClick={() => setShowEmojis(!showEmojis)}
+                className="addSomethingChoice"
+              >
+                <EmojiEmotions className="addSomethingIcon addSomething3" />
+                <span className="addSomethingText"></span>
+              </div>
+              <div className="addSomethingChoice">
+                <ShareIcon className="addSomethingIcon addSomething3" />
+                <span className="addSomethingText"></span>
+              </div>
+              <div className="addSomethingChoice">
+                <GifBoxIcon className="addSomethingIcon addSomething3" />
+                <span className="addSomethingText"></span>
+              </div>
             </div>
-            <div className="addSomethingChoice">
-              <ShareIcon className="addSomethingIcon addSomething3" />
-              <span className="addSomethingText"></span>
-            </div>
-            <div className="addSomethingChoice">
-              <GifBoxIcon className="addSomethingIcon addSomething3" />
-              <span className="addSomethingText"></span>
-            </div>
+
+            {showEmojis && (
+              <div className="addSomethingEmoji">
+                <Picker onEmojiSelect={addEmoji} />
+              </div>
+            )}
           </div>
           <div className="addSomethingButtonContainer">
             <button className="addSomethingButton">Post</button>
           </div>
-          {showEmojis && (
-            <div className="addSomethingEmoji">
-              <Picker onEmojiSelect={addEmoji} />
-            </div>
-          )}
         </div>
       </div>
     </form>

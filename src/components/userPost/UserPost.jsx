@@ -9,12 +9,14 @@ import { AuthContext } from "../../context/AuthContext";
 function UserPost(props) {
   const shared = props.shared;
   // console.log(shared,'shared');
+  console.log(Users);
 
   const [commentMode, setCommentMode] = useState(false);
   const [readyToDelete, setReadyToDelete] = useState(false);
   const [liked, setLiked] = useState(false);
   const commentRef = useRef(null);
   const { currentUser } = useContext(AuthContext);
+  console.log(currentUser, "CURRENT");
 
   //function to post comment here
   const postComment = (e) => {
@@ -22,7 +24,7 @@ function UserPost(props) {
     const userComment = commentRef.current.value;
     //some comment validation here
     if (userComment === "") {
-      alert("please write something. I made this site so painstakingly");
+      alert("please write something :)");
     } else {
       const commentObj = {
         name: currentUser.displayName,
@@ -87,13 +89,13 @@ function UserPost(props) {
             <span className="userPostTime"> {shared.date}</span>
           </div>
           <div className="userPostTwo">
-            <IconButton>
-              <ExpandMore className="userPostBtn" onClick={openDeleteMenu} />
+            <IconButton onClick={openDeleteMenu}>
+              <ExpandMore className="userPostBtn" />
             </IconButton>
             {readyToDelete ? (
-              <button className="delete" onClick={deleteThisPost}>
+              <div className="delete" onClick={deleteThisPost}>
                 delete{" "}
-              </button>
+              </div>
             ) : (
               <></>
             )}
@@ -104,7 +106,7 @@ function UserPost(props) {
           {shared.photo !== "" ? (
             <img
               src={shared.photo}
-              alt="person face"
+              alt="randompicture"
               className="userPostMiddleImg"
             />
           ) : (
@@ -126,8 +128,8 @@ function UserPost(props) {
           </div>
           <div className="userPostDownTwo">
             <span className="userPostDownInput">
-              {shared.comments !== undefined ? shared.comments.length : 0}{" "}
-              *comments
+              {shared.comments !== undefined ? shared.comments.length : 0}
+              {` - comments`}
             </span>
           </div>
         </div>

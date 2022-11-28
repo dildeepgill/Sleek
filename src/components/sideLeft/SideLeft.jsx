@@ -6,6 +6,7 @@ import IconLeft from "../iconLeft/IconLeft";
 import Known from "../known/Known";
 import { Users } from "../../data";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import { Link } from "react-router-dom";
 function SideLeft() {
   return (
     <div className="sideLeft">
@@ -13,7 +14,9 @@ function SideLeft() {
         <IconLeft icon={<ChatIcon />} text="Messenger" />
         <IconLeft icon={<LightbulbIcon />} text="Change Theme" />
         <IconLeft icon={<NotificationsIcon />} text="Notfications" />
-        <IconLeft icon={<LogoutIcon />} text="Logout" />
+        <Link to="/enter">
+          <IconLeft icon={<LogoutIcon />} text="Logout" />
+        </Link>
 
         {/* <button className="sideLeftBtn">Post</button> */}
         <hr className="sideLeftHr" />

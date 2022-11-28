@@ -91,6 +91,7 @@
 }
 
 .addSomethingBottom {
+  justify-content: space-around;
   display: flex;
 }
 
@@ -112,4 +113,17 @@
   border-radius: 50%;
   cursor: pointer;
   font-size: 50px !important;
+}
+
+.addSomethingEmojiDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.addSomethingEmoji {
+  margin-top: 20px;
+}
+.addSomethingButtonContainer {
+  display: inline-block;
+  margin-right: 25px;
 }

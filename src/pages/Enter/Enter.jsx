@@ -51,7 +51,9 @@ function Enter() {
                     Sign In
                   </button>
                 </Link>
-                <button className="enterLogBtn">Create a New Account</button>
+                <Link to="/">
+                  <button className="enterLogBtn">Create a New Account</button>
+                </Link>
                 {error && <span>Error</span>}
               </form>
             </div>

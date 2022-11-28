@@ -5,7 +5,7 @@ function IconLeft({ icon, text }) {
     <div className="iconLeft">
       {icon}
       <span className="iconLeftText">{text}</span>
-      <span className="iconLeftName">{text === "Logout" && "(Dil)"}</span>
+      <span className="iconLeftName">{text === "Logout"}</span>
     </div>
   );
 }
