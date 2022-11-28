@@ -1,0 +1,143 @@
+.nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  background-color: black;
+  top: 0;
+  z-index: 10;
+}
+
+.navLogo {
+  font-size: 25px;
+  color: white;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.navOne {
+  width: 25%;
+}
+
+.navTwo {
+  width: 50%;
+}
+
+.navSearch {
+  color: white;
+  border-radius: 29px;
+  border: 2px solid white;
+  align-items: center;
+  display: flex;
+  background-color: rgb(81, 78, 78);
+}
+
+.navSearchIcon {
+  font-size: 22px;
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.navInput {
+  border: none;
+  width: 80%;
+  height: 29px;
+  background-color: rgb(81, 78, 78);
+}
+
+.navInput:focus {
+  outline: none;
+}
+
+.navLink {
+  margin-left: 22px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.navIcons {
+  display: flex;
+  font-size: 19px;
+  gap: 8px;
+  width: 25%;
+}
+
+.navIconSingle {
+  display: flex;
+  margin-right: 16px;
+  position: relative;
+  cursor: pointer;
+}
+
+.navCounter {
+  width: 15px;
+  height: 15px;
+  color: red;
+  position: absolute;
+  font-size: 13px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  top: -4px;
+  right: -4px;
+}
+
+.navImg {
+  display: flex;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .navOne {
+    flex: 2;
+  }
+  .navLogo {
+    font-weight: 400;
+  }
+  .navTwo {
+    flex: 5;
+  }
+  .navSearch {
+    width: 95%;
+  }
+  .navInput {
+    width: 65%;
+  }
+  .navImg {
+    margin-right: 19px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navOne {
+    flex: 3;
+  }
+  .navLink {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .nav {
+    justify-content: space-between;
+  }
+
+  .navOne {
+    flex: 1;
+  }
+  .navTwo {
+    flex: 1;
+    display: none;
+  }
+  .navThree {
+    flex: 1;
+  }
+}

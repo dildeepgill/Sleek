@@ -1,0 +1,102 @@
+.enter {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enterContainer {
+  width: 100%;
+}
+
+.enterOne {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 20px;
+  justify-content: center;
+}
+
+.enterTitle {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.enterTwo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 20px;
+  justify-content: center;
+}
+
+.enterBtn {
+  height: 50px;
+  width: 100%;
+  color: white;
+  background-color: grey;
+  font-weight: 500;
+  font-size: 23px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border: 2px solid rgb(117, 117, 117);
+  transition: all 300ms ease;
+}
+
+.enterBtn:hover {
+  border-color: grey;
+  background-color: transparent;
+}
+
+.enterLogBtn {
+  height: 50px;
+  width: 100%;
+  color: white;
+  background-color: rgb(134, 77, 134);
+  font-weight: 500;
+  font-size: 23px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border: 2px solid rgb(134, 77, 134);
+  transition: all 300ms ease;
+}
+
+.enterLogBtn:hover {
+  border-color: grey;
+  background-color: transparent;
+}
+
+.enterInput {
+  width: 100%;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: 4px solid grey;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 50px;
+  transition: all 300ms ease;
+  font-size: 18px;
+}
+
+.enterInput:hover {
+  border-color: rgb(134, 77, 134);
+}
+
+.enterUserBot {
+  height: 350px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: black;
+  max-width: 550px;
+  margin: 0 auto;
+}

@@ -1,0 +1,8 @@
+.display {
+  flex: 6;
+}
+
+.displayContainer {
+  border: 1px solid grey;
+  border-top: none;
+}

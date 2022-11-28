@@ -1,0 +1,24 @@
+.sideLeftPeople {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.sideLeftImg {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 22px;
+  object-fit: cover;
+}
+
+.sideLeftName {
+  font-weight: 400;
+}
+
+@media (max-width: 980px) {
+  .sideLeftName {
+    display: none;
+  }
+}
