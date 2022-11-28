@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 50px;
 }
 
 .userPostOne {
@@ -77,34 +78,6 @@
   cursor: pointer;
   color: red;
 }
-
-/* .commentBox {
-  display: flex;
-}
-
-.commentInput {
-  flex-grow: 4;
-}
-
-.commentPost {
-  flex-grow: 1;
-}
-
-.commentParent {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.commentBody {
-  flex-grow: 2;
-}
-
-.commentTime {
-  flex-grow: 1;
-  font-size: 0.5rem;
-  padding-block: 0.5rem;
-} */
 
 .delete {
   background: transparent;
@@ -198,4 +171,11 @@
   display: flex;
   flex-direction: column;
   align-content: center;
+}
+
+.commentTime,
+.userPostTime {
+  flex-grow: 1;
+  font-size: 0.5rem;
+  padding-block: 0.5rem;
 }

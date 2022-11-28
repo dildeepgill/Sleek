@@ -1,3 +1,70 @@
 .ads {
   flex: 3;
 }
+.adsEditProfile {
+  text-align: left;
+  cursor: pointer;
+  font-size: 20px;
+}
+.aboutMeAbove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutMeContainer {
+  display: flex;
+}
+
+.aboutMeOne {
+  flex: 9.5;
+}
+
+.aboutMeCover {
+  height: 200px;
+}
+
+.aboutMeCoverImg {
+  width: 100%;
+
+  object-fit: cover;
+}
+
+.aboutMeCoverProfile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 150px;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.aboutMeInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutMeInfoName {
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.aboutMeInfoText {
+  font-weight: 300;
+}
+
+.aboutMeCoverBotttom {
+  display: flex;
+}
+
+@media (max-width: 770px) {
+  .ads {
+    display: none;
+  }
+}

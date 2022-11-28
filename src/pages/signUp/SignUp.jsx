@@ -18,41 +18,34 @@ function SignUp() {
     const displayName = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-    try {
-      const res = await createUserWithEmailAndPassword(auth, email, password);
 
-      const storageRef = ref(storage, "usersImages/" + displayName);
+    const res = await createUserWithEmailAndPassword(auth, email, password);
 
-      const uploadTask = uploadBytesResumable(storageRef, img);
+    const storageRef = ref(storage, "usersImages/" + displayName);
+    const uploadTask = uploadBytesResumable(storageRef, img);
 
-      uploadTask.on(
-        (error) => {
-          setError(true);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateProfile(res.user, {
-              displayName,
-              photoURL: downloadURL,
-            });
+    uploadTask.then(() => {
+      getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+        await updateProfile(res.user, {
+          displayName,
+          photoURL: downloadURL,
+        });
 
-            await setDoc(doc(db, "users", res.user.uid), {
-              uid: res.user.uid,
-              displayName,
-              email,
-              photoURL: downloadURL,
-            });
+        await setDoc(doc(db, "users", res.user.uid), {
+          uid: res.user.uid,
+          displayName,
+          email,
+          photoURL: downloadURL,
+        });
 
-            await setDoc(doc(db, "usersPosts", res.user.uid), { messages: [] });
-            // console.log(res.user);
-          });
-        }
-      );
-    } catch (error) {
-      setError(true);
-    }
+        await setDoc(doc(db, "usersPosts", res.user.uid), { messages: [] });
+        // console.log(res.user);
+      });
+    });
+
     navigate("/enter");
   };
+
   return (
     <div className="SignUp">
       <div className="SignUpContainer">
@@ -110,13 +103,6 @@ function SignUp() {
                   minLength={5}
                   required
                 />
-                {/* <input
-                  type="password"
-                  placeholder="Confirm Password"
-                  id="confirmPasword"
-                  className="SignUpReg"
-                  required
-                /> */}
                 <button type="submit" className="SignUpRegBtn">
                   Sign Up
                 </button>

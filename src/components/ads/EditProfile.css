@@ -1,0 +1,11 @@
+.changeUserImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 150px;
+  object-fit: cover;
+  border: 3px solid white;
+}

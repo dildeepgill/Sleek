@@ -2,22 +2,18 @@ import { IconButton } from "@mui/material";
 import { Users } from "../../data";
 import { ExpandMore, FavoriteBorder } from "@mui/icons-material";
 import ChatIcon from "@mui/icons-material/Chat";
-// import FavoriteIcon from "@mui/icons-material/Favourite";
 import "./UserPost.css";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import TimeAgo from "timeago-react";
+import moment from "moment/moment";
 function UserPost(props) {
   const shared = props.shared;
-  // console.log(shared,'shared');
-  console.log(Users);
-
   const [commentMode, setCommentMode] = useState(false);
   const [readyToDelete, setReadyToDelete] = useState(false);
   const [liked, setLiked] = useState(false);
   const commentRef = useRef(null);
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser, "CURRENT");
-
   //function to post comment here
   const postComment = (e) => {
     e.preventDefault();
@@ -29,7 +25,7 @@ function UserPost(props) {
       const commentObj = {
         name: currentUser.displayName,
         body: userComment,
-        dateTime: Date.now(),
+        dateTime: moment().format("MMMM Do YYYY, h:mm:ss a"),
       };
       if (shared.comments === undefined) {
         //no current comments start with new comments array
@@ -86,7 +82,10 @@ function UserPost(props) {
             <span className="userPostWho">
               {Users.filter((name) => name.id === shared.userId)[0].name}
             </span>
-            <span className="userPostTime"> {shared.date}</span>
+            <span className="userPostTime">
+              {" "}
+              {moment().format("MMMM Do YYYY, h:mm:ss a")}
+            </span>
           </div>
           <div className="userPostTwo">
             <IconButton onClick={openDeleteMenu}>
@@ -159,8 +158,10 @@ function UserPost(props) {
                     <span className="commentUsername">
                       @{comment.name.replace(/\s+/g, "").toLowerCase()}
                     </span>
-                    <span className="commentBody"> {comment.body}</span>
-                    <span className="commentTime"> {comment.dateTime}</span>
+                    <span className="commentBody"> {`${comment.body} `}</span>
+                    <span className="commentTime">
+                      {moment().format("MMMM Do YYYY, h:mm:ss a")}
+                    </span>
                   </div>
                 </div>
               );

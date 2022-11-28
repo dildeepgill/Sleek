@@ -7,11 +7,11 @@ function Enter() {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
-  async function handleClick(event) {
-    event.preventDefault();
+  const handleLogin = async (e) => {
+    e.preventDefault();
 
-    const email = event.target[0].value;
-    const password = event.target[1].value;
+    const email = e.target[0].value;
+    const password = e.target[1].value;
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -19,7 +19,7 @@ function Enter() {
     } catch (error) {
       setError(true);
     }
-  }
+  };
 
   return (
     <div className="enter">
@@ -30,7 +30,7 @@ function Enter() {
         <div className="enterTwo">
           <div className="enterUserInput">
             <div className="enterBot">
-              <form onSubmit={handleClick} className="enterUserBot">
+              <form onSubmit={handleLogin} className="enterUserBot">
                 <input
                   type="email"
                   placeholder="Email"
@@ -46,11 +46,11 @@ function Enter() {
                   minLength={5}
                   required
                 />
-                <Link to="/home">
-                  <button type="submit" className="enterBtn">
-                    Sign In
-                  </button>
-                </Link>
+
+                <button type="submit" className="enterBtn">
+                  Sign In
+                </button>
+
                 <Link to="/">
                   <button className="enterLogBtn">Create a New Account</button>
                 </Link>

@@ -16,7 +16,6 @@ function Display() {
   };
 
   const updatePostData = (postToUpdate) => {
-    console.log("postToUpdate", postToUpdate);
     const currentPostsArray = [...customPosts];
     currentPostsArray.filter((item) => {
       if (postToUpdate.body === item.body) {
@@ -30,7 +29,6 @@ function Display() {
 
   const removePost = (post) => {
     const currentPostsArray = [...customPosts];
-    console.log(currentPostsArray.length);
     const filteredArray = currentPostsArray.filter((item) => item !== post);
     setCustomPosts(filteredArray);
   };

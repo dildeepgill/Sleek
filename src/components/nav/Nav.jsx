@@ -1,6 +1,9 @@
 import "./Nav.css";
 import SearchIcon from "@mui/icons-material/Search";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 function Nav() {
+  const { currentUser } = useContext(AuthContext);
   return (
     <div className="nav">
       <div className="navOne">
@@ -16,8 +19,7 @@ function Nav() {
         <div className="navLinks">
           <span className="navLink">Home</span>
         </div>
-
-        <img src="/assets/face1.jpg" alt="person face" className="navImg" />
+        <img src={currentUser.photoURL} alt="person face" className="navImg" />
       </div>
     </div>
   );
