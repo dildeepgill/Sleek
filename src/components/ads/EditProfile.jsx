@@ -117,7 +117,13 @@ const EditProfile = () => {
           <div className="changeAbove"></div>
           <div className="changeBot">
             <div className="changeTop">
-              <h1>Edit your Profile</h1>
+              <h1
+                onClick={(e) => {
+                  setImg(e.target.files[0]);
+                }}
+              >
+                Edit your Profile
+              </h1>
             </div>
             <div className="changeBottom">
               <div className="changeTwo"></div>
