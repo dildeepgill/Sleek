@@ -1,4 +1,3 @@
-import { DriveFolderUploadOutlined } from "@mui/icons-material";
 import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
@@ -111,7 +110,6 @@ const EditProfile = () => {
     navigate("/enter");
   };
 
-  // console.log(data);
   return (
     <div className="change">
       <div className="changeContainer">
@@ -122,16 +120,7 @@ const EditProfile = () => {
               <h1>Edit your Profile</h1>
             </div>
             <div className="changeBottom">
-              <div className="changeTwo">
-                <img
-                  src={
-                    img
-                      ? URL.createObjectURL(img)
-                      : "/assets/profileCover/DefaultProfile.jpg"
-                  }
-                  alt=""
-                />
-              </div>
+              <div className="changeTwo"></div>
               <div className="changeThree">
                 <form onSubmit={handleUpdate}>
                   {/* <div className="editFormInput">

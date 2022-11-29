@@ -12,7 +12,6 @@ function AddSomething(props) {
   const [input, setInput] = useState("");
   const [showEmojis, setShowEmojis] = useState(false);
 
-  console.log(currentUser.photoURL, "PHOTOTO");
   //we just need to read whatever is in the input field.
   const inputRef = useRef(null);
   const sharedImgRef = useRef(null);
@@ -86,7 +85,7 @@ function AddSomething(props) {
           <div className="shareImgContainer">
             <img
               src={URL.createObjectURL(img)}
-              alt=""
+              alt="uploaed by user"
               className="shareImg"
               ref={sharedImgRef}
             />

@@ -8,12 +8,10 @@ import EditProfile from "./EditProfile";
 const Ads = () => {
   const { currentUser } = useContext(AuthContext);
   const [modal, setModal] = useState(false);
-  console.log(currentUser["country"], "CHECL THIOSSSSSSSS");
 
   function modalOpens() {
     setModal(!modal);
   }
-  console.log(currentUser, "current");
 
   return (
     <div className="ads">
@@ -24,13 +22,8 @@ const Ads = () => {
               <div className="aboutMeInfo"></div>
               <div className="aboutMeCover">
                 <img
-                  src="/assets/profileCover/profilecover.jpg"
-                  alt=""
-                  className="aboutMeCoverImg"
-                />
-                <img
                   src={currentUser.photoURL}
-                  alt=""
+                  alt="cover pic"
                   className="aboutMeCoverProfile"
                 />
               </div>

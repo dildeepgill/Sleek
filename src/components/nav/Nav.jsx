@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 function Nav() {
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser.photoURL, "IMGGGG");
   return (
     <div className="nav">
       <div className="navOne">

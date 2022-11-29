@@ -14,7 +14,6 @@ function SignUp() {
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
-    console.log(img, "IMG");
     e.preventDefault();
     if (img === null) {
       alert("please add an image");
@@ -65,7 +64,7 @@ function SignUp() {
                   src={
                     img ? URL.createObjectURL(img) : "/assets/placeholder.png"
                   }
-                  alt=""
+                  alt="user pic"
                   className="SignUpImg"
                 />
               </div>
