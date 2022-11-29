@@ -115,6 +115,11 @@
     margin-right: 19px;
   }
 }
+@media (max-width: 1009px) {
+  .navIcons {
+    width: 35%;
+  }
+}
 
 @media (max-width: 768px) {
   .navOne {
@@ -158,8 +163,29 @@
   }
 }
 
-@media (max-width: 1009px) {
-  .navIcons {
-    width: 35%;
+@media (max-width: 472px) {
+  .addSomethingEmojiDiv {
+    max-width: 230px;
+  }
+}
+
+@media (max-width: 472px) {
+  :host {
+    width: 200px !important;
+  }
+}
+
+@media (max-width: 373px) {
+  .addSomethingButton {
+    width: 68px;
+  }
+  .addSomethingButtonContainer {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 339px) {
+  .addSomethingButton {
+    width: 68px;
   }
 }
