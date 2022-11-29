@@ -7,14 +7,15 @@ import { AuthContext } from "../../context/AuthContext";
 import Picker from "@emoji-mart/react";
 
 function AddSomething(props) {
+  const { currentUser } = useContext(AuthContext);
   const [img, setImg] = useState(null);
   const [input, setInput] = useState("");
   const [showEmojis, setShowEmojis] = useState(false);
 
-  const { currentUser } = useContext(AuthContext);
+  console.log(currentUser.photoURL, "PHOTOTO");
   //we just need to read whatever is in the input field.
   const inputRef = useRef(null);
-
+  const sharedImgRef = useRef(null);
   //posts is going to be an object, no matter where it is initialised, its probably going to be placed in a parent component
   //post={content:"hello",datetime:,likes:,dislikes}
 
@@ -22,17 +23,23 @@ function AddSomething(props) {
   const submitPost = (e) => {
     e.preventDefault();
     const postContent = inputRef.current.value;
+    let photoSrc = "";
+    //logic to get photo
+    if (sharedImgRef.current != null) {
+      photoSrc = sharedImgRef.current.src;
+    }
     //when we submit here there should be a default post object which is put inside the array posts
-    if (postContent === "") {
+    if (postContent === "" && photoSrc === "") {
       alert("please write something :) ");
     } else {
       const currentPost = {
+        displayName: currentUser.displayName,
         body: postContent,
         comment: "helo",
         date: "27-11-2022",
         id: 1,
         like: 0,
-        photo: "",
+        photo: photoSrc,
         title: "i love soccer",
         userId: 2,
       };
@@ -77,7 +84,12 @@ function AddSomething(props) {
         <hr className="addSomethingHr" />
         {img && (
           <div className="shareImgContainer">
-            <img src={URL.createObjectURL(img)} alt="" className="shareImg" />
+            <img
+              src={URL.createObjectURL(img)}
+              alt=""
+              className="shareImg"
+              ref={sharedImgRef}
+            />
             <Close className="shareCancelImg" onClick={removeImage} />
           </div>
         )}

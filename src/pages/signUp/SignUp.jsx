@@ -14,6 +14,7 @@ function SignUp() {
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
+    console.log(img, "IMG");
     e.preventDefault();
     const displayName = e.target[0].value;
     const email = e.target[1].value;
@@ -58,7 +59,9 @@ function SignUp() {
               <div>
                 {" "}
                 <img
-                  src={img ? URL.createObjectURL(img) : "/assets/face1.jpg"}
+                  src={
+                    img ? URL.createObjectURL(img) : "/assets/placeholder.png"
+                  }
                   alt=""
                   className="SignUpImg"
                 />

@@ -17,7 +17,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const EditProfile = () => {
-  const [img, setImg] = useState(null);
+  const [editImg, setEditImg] = useState(null);
   const [error, setError] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -38,9 +38,9 @@ const EditProfile = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
 
-    if (img) {
+    if (editImg) {
       const storageRef = ref(storage, "usersImages/" + uuid());
-      const uploadTask = uploadBytesResumable(storageRef, img);
+      const uploadTask = uploadBytesResumable(storageRef, editImg);
 
       uploadTask.on(
         (error) => {
@@ -112,6 +112,10 @@ const EditProfile = () => {
     }
     navigate("/enter");
   };
+
+  const changeDp = (e) => {
+    console.log("dp is changed");
+  };
   // console.log(data);
   return (
     <div className="change">
@@ -143,8 +147,8 @@ const EditProfile = () => {
               <div className="changeTwo">
                 <img
                   src={
-                    img
-                      ? URL.createObjectURL(img)
+                    editImg
+                      ? URL.createObjectURL(editImg)
                       : "/assets/profileCover/DefaultProfile.jpg"
                   }
                   alt=""
@@ -152,16 +156,20 @@ const EditProfile = () => {
               </div>
               <div className="changeThree">
                 <form onSubmit={handleUpdate}>
-                  <div className="formInput">
+                  <div className="editFormInput">
                     <label htmlFor="file">
-                      Image: <DriveFolderUploadOutlined className="icon" />
+                      Image:{" "}
+                      <DriveFolderUploadOutlined
+                        className="icon"
+                        onClick={changeDp}
+                      />
                     </label>
-                    <input
+                    {/* <input
                       type="file"
                       id="file"
                       style={{ display: "none" }}
-                      onChange={(e) => setImg(e.target.files[0])}
-                    />
+
+                    /> */}
                   </div>
                   <div className="changeFormInput">
                     <label>Name</label>

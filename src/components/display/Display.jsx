@@ -2,7 +2,6 @@ import AddSomething from "../addSomething/AddSomething";
 import UserPost from "../userPost/UserPost";
 import "./Display.css";
 import { Posts } from "../../data";
-import userEvent from "@testing-library/user-event";
 import { useState } from "react";
 function Display() {
   //posts has to be a useState coz it renders the page
@@ -41,10 +40,10 @@ function Display() {
         <AddSomething addToPosts={addNewPost} />
 
         {customPosts.length !== 0 ? (
-          customPosts.map((name) => {
+          customPosts.map((name, index) => {
             return (
               <UserPost
-                key={name.id}
+                key={index}
                 shared={name}
                 updatePost={updatePostData}
                 deletePost={removePost}

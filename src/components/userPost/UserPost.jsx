@@ -5,7 +5,6 @@ import ChatIcon from "@mui/icons-material/Chat";
 import "./UserPost.css";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import TimeAgo from "timeago-react";
 import moment from "moment/moment";
 function UserPost(props) {
   const shared = props.shared;
@@ -19,6 +18,7 @@ function UserPost(props) {
     e.preventDefault();
     const userComment = commentRef.current.value;
     //some comment validation here
+
     if (userComment === "") {
       alert("please write something :)");
     } else {
@@ -74,13 +74,19 @@ function UserPost(props) {
         <div className="userPostUp">
           <div className="userPostOne">
             <img
-              src={Users.filter((name) => name.id === shared.userId)[0].Picture}
+              src={
+                shared.displayName !== undefined
+                  ? currentUser.photoURL
+                  : Users.filter((name) => name.id === shared.userId)[0].Picture
+              }
               alt="userface"
               className="userPostImg"
             />
 
             <span className="userPostWho">
-              {Users.filter((name) => name.id === shared.userId)[0].name}
+              {shared.displayName !== undefined
+                ? shared.displayName
+                : Users.filter((name) => name.id === shared.userId)[0].name}
             </span>
             <span className="userPostTime">
               {" "}
