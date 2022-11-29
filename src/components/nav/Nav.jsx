@@ -2,6 +2,9 @@ import "./Nav.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
+import LogoutIcon from "@mui/icons-material/Logout";
+
 function Nav() {
   const { currentUser } = useContext(AuthContext);
   return (
@@ -20,6 +23,13 @@ function Nav() {
           <span className="navLink">Home</span>
         </div>
         <img src={currentUser.photoURL} alt="person face" className="navImg" />
+        <Link to="/enter">
+          <LogoutIcon
+            style={{ cursor: "pointer" }}
+            text="Logout"
+            className="navIconsLogout"
+          />
+        </Link>
       </div>
     </div>
   );

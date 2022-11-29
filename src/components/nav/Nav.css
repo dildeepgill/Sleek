@@ -91,6 +91,9 @@
   border-radius: 50%;
   object-fit: cover;
 }
+.navIconsLogout {
+  display: none !important;
+}
 
 @media (max-width: 1000px) {
   .navOne {
@@ -139,5 +142,24 @@
   }
   .navThree {
     flex: 1;
+  }
+}
+
+@media (max-width: 570px) {
+  .navIconsLogout {
+    display: block !important;
+  }
+  .navIcons {
+    align-items: center;
+    gap: 6px;
+  }
+  .navIcons {
+    width: 28%;
+  }
+}
+
+@media (max-width: 1009px) {
+  .navIcons {
+    width: 35%;
   }
 }
