@@ -129,17 +129,14 @@ const EditProfile = () => {
               <div className="changeTwo"></div>
               <div className="changeThree">
                 <form onSubmit={handleUpdate}>
-                  {/* <div className="editFormInput">
-                    <label htmlFor="file">
-                      Image:{" "}
-                      <DriveFolderUploadOutlined
-                        className="icon"
-                        onClick={(e) => {
-                          setImg(e.target.files[0]);
-                        }}
-                      />
-                    </label>
-                  </div> */}
+                  <div className="editFormInput">
+                    <label
+                      htmlFor="file"
+                      onClick={(e) => {
+                        setImg(e.target.files[0]);
+                      }}
+                    ></label>
+                  </div>
                   <div className="changeFormInput">
                     <label>Name</label>
                     <input
