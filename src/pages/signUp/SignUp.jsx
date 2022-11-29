@@ -43,10 +43,9 @@ function SignUp() {
           });
 
           await setDoc(doc(db, "usersPosts", res.user.uid), { messages: [] });
-          // console.log(res.user);
         });
       });
-
+      setError(true);
       navigate("/enter");
     }
   };

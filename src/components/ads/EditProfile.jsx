@@ -17,7 +17,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const EditProfile = () => {
-  const [editImg, setEditImg] = useState(null);
+  const [img, setImg] = useState(null);
   const [error, setError] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -38,12 +38,13 @@ const EditProfile = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
 
-    if (editImg) {
+    if (img) {
       const storageRef = ref(storage, "usersImages/" + uuid());
-      const uploadTask = uploadBytesResumable(storageRef, editImg);
+      const uploadTask = uploadBytesResumable(storageRef, img);
 
       uploadTask.on(
         (error) => {
+          console.log(error);
           setError(true);
         },
         () => {
@@ -161,7 +162,9 @@ const EditProfile = () => {
                       Image:{" "}
                       <DriveFolderUploadOutlined
                         className="icon"
-                        onClick={changeDp}
+                        onClick={(e) => {
+                          setImg(e.target.files[0]);
+                        }}
                       />
                     </label>
                     {/* <input
