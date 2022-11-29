@@ -8,7 +8,7 @@ import EditProfile from "./EditProfile";
 const Ads = () => {
   const { currentUser } = useContext(AuthContext);
   const [modal, setModal] = useState(false);
-  console.log(currentUser);
+  console.log(currentUser["country"], "CHECL THIOSSSSSSSS");
 
   function modalOpens() {
     setModal(!modal);
@@ -21,9 +21,7 @@ const Ads = () => {
         <div className="aboutMeContainer">
           <div className="aboutMeOne">
             <div className="aboutMeAbove">
-              <div className="aboutMeInfo">
-                <span className="aboutMeInfoText">Hi Hiring Manager</span>
-              </div>
+              <div className="aboutMeInfo"></div>
               <div className="aboutMeCover">
                 <img
                   src="/assets/profileCover/profilecover.jpg"
@@ -40,6 +38,7 @@ const Ads = () => {
             <div className="aboutMeAllInfo">
               <h4 className="aboutMeInfoName">{currentUser.displayName}</h4>
               <div className="aboutMeInfoemail">{currentUser.email}</div>
+              <div className="aboutMeInfoemail">{currentUser.country}</div>
             </div>
 
             <div className="aboutMeCoverBotttom"></div>

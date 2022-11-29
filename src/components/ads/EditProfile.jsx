@@ -116,24 +116,7 @@ const EditProfile = () => {
     <div className="change">
       <div className="changeContainer">
         <div className="changeOne">
-          <div className="changeAbove">
-            {/* <div className="changeCover">
-              <img
-                src="/assets/profileCover/profilecover.jpg"
-                alt=""
-                className="changeImg"
-              />
-              <img
-                src={currentUser.photoURL}
-                alt=""
-                className="changeUserImg"
-              />
-            </div> */}
-            {/* <div className="changeInfo">
-              <h4 className="changeName">{currentUser.displayName}</h4>
-              <span className="changeSaying">Hi Friends!</span>
-            </div> */}
-          </div>
+          <div className="changeAbove"></div>
           <div className="changeBot">
             <div className="changeTop">
               <h1>Edit your Profile</h1>
@@ -151,7 +134,7 @@ const EditProfile = () => {
               </div>
               <div className="changeThree">
                 <form onSubmit={handleUpdate}>
-                  <div className="editFormInput">
+                  {/* <div className="editFormInput">
                     <label htmlFor="file">
                       Image:{" "}
                       <DriveFolderUploadOutlined
@@ -161,18 +144,13 @@ const EditProfile = () => {
                         }}
                       />
                     </label>
-                    {/* <input
-                      type="file"
-                      id="file"
-                      style={{ display: "none" }}
-
-                    /> */}
-                  </div>
+                  </div> */}
                   <div className="changeFormInput">
                     <label>Name</label>
                     <input
                       type="text"
                       name="name"
+                      required
                       placeholder="Dildeep Gill"
                       className="changeInputColor"
                       onChange={handleChange}
@@ -184,12 +162,13 @@ const EditProfile = () => {
                     <input
                       type="email"
                       name="newEmail"
+                      required
                       placeholder="businesswithdil@gmail.com"
                       className="changeInputColor"
                       onChange={handleChange}
                     />
                   </div>
-                  <div className="changeFormInput">
+                  {/* <div className="changeFormInput">
                     <label>Phone</label>
                     <input
                       type="text"
@@ -198,8 +177,8 @@ const EditProfile = () => {
                       className="changeInputColor"
                       onChange={handleChange}
                     />
-                  </div>
-                  <div className="changeFormInput">
+                  </div> */}
+                  {/* <div className="changeFormInput">
                     <label>Age</label>
                     <input
                       type="text"
@@ -208,8 +187,8 @@ const EditProfile = () => {
                       name="age"
                       onChange={handleChange}
                     />
-                  </div>
-                  <div className="changeFormInput">
+                  </div> */}
+                  {/* <div className="changeFormInput">
                     <label>Country</label>
                     <input
                       type="text"
@@ -218,8 +197,8 @@ const EditProfile = () => {
                       placeholder="Canada"
                       onChange={handleChange}
                     />
-                  </div>
-                  <div className="changeFormInput">
+                  </div> */}
+                  {/* <div className="changeFormInput">
                     <label>Relationship</label>
                     <input
                       type="text"
@@ -228,11 +207,12 @@ const EditProfile = () => {
                       placeholder="Enter Your Status"
                       onChange={handleChange}
                     />
-                  </div>
+                  </div> */}
                   <div className="changeFormInput">
                     <label>Password</label>
                     <input
                       type="password"
+                      required
                       name="oldPassword"
                       className="changeInputColor"
                       placeholder="Enter Your Old Password"
