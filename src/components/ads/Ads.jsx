@@ -1,11 +1,3 @@
-// import "./Ads.css";
-
-// function Ads() {
-//   return <div className="ads"></div>;
-// }
-
-// export default Ads;
-
 import React, { useContext, useState } from "react";
 
 import "./Ads.css";
@@ -21,6 +13,7 @@ const Ads = () => {
   function modalOpens() {
     setModal(!modal);
   }
+  console.log(currentUser, "current");
 
   return (
     <div className="ads">
@@ -29,7 +22,6 @@ const Ads = () => {
           <div className="aboutMeOne">
             <div className="aboutMeAbove">
               <div className="aboutMeInfo">
-                <h4 className="aboutMeInfoName">{currentUser.displayName}</h4>
                 <span className="aboutMeInfoText">Hi Hiring Manager</span>
               </div>
               <div className="aboutMeCover">
@@ -45,6 +37,11 @@ const Ads = () => {
                 />
               </div>
             </div>
+            <div className="aboutMeAllInfo">
+              <h4 className="aboutMeInfoName">{currentUser.displayName}</h4>
+              <div className="aboutMeInfoemail">{currentUser.email}</div>
+            </div>
+
             <div className="aboutMeCoverBotttom"></div>
             <div className="adsEditProfile" onClick={modalOpens}>
               Edit Profile

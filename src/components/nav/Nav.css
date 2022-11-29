@@ -120,6 +120,9 @@
   .navLink {
     display: none;
   }
+  .navIcons {
+    gap: 30px;
+  }
 }
 
 @media (max-width: 550px) {

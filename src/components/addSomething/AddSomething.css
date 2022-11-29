@@ -151,3 +151,15 @@ padding: 0 10px;
   display: inline-block;
   margin-right: 25px;
 }
+
+@media (max-width: 368px) {
+  .addSomething {
+    width: 85%;
+  }
+  .addSomethingBottom {
+    justify-content: center;
+  }
+  .addSomethingChoice {
+    margin: 5px;
+  }
+}

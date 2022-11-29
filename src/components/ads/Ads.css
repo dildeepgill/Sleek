@@ -18,7 +18,7 @@
 }
 
 .aboutMeCover {
-  height: 200px;
+  height: 178px;
 }
 
 .aboutMeCoverImg {
@@ -81,6 +81,10 @@
 }
 .adsEditProfile:hover {
   background-color: rgb(96, 72, 96);
+}
+.aboutMeAllInfo {
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 @media (max-width: 770px) {

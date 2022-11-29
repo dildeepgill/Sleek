@@ -15,7 +15,11 @@ function SideLeft() {
         <IconLeft icon={<LightbulbIcon />} text="Change Theme" />
         <IconLeft icon={<NotificationsIcon />} text="Notfications" />
         <Link to="/enter">
-          <IconLeft icon={<LogoutIcon />} text="Logout" />
+          <IconLeft
+            icon={<LogoutIcon />}
+            style={{ cursor: "pointer" }}
+            text="Logout"
+          />
         </Link>
 
         {/* <button className="sideLeftBtn">Post</button> */}
