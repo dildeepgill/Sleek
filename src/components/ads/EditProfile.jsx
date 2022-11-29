@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 const EditProfile = () => {
   const [img, setImg] = useState(null);
-  const [error, setError] = useState(false);
+
   const [data, setData] = useState({
     name: "",
     newEmail: "",
@@ -43,10 +43,7 @@ const EditProfile = () => {
       const uploadTask = uploadBytesResumable(storageRef, img);
 
       uploadTask.on(
-        (error) => {
-          console.log(error);
-          setError(true);
-        },
+        (error) => {},
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await updateProfile(currentUser, {
