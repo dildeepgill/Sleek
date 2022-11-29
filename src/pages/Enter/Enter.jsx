@@ -25,7 +25,7 @@ function Enter() {
     <div className="enter">
       <div className="enterContainer">
         <div className="enterOne">
-          <h1 className="enterTitle">Welcome to Sleek</h1>
+          <h1 className="enterTitle">Welcome To Sleek</h1>
         </div>
         <div className="enterTwo">
           <div className="enterUserInput">
