@@ -114,9 +114,6 @@ const EditProfile = () => {
     navigate("/enter");
   };
 
-  const changeDp = (e) => {
-    console.log("dp is changed");
-  };
   // console.log(data);
   return (
     <div className="change">
@@ -148,8 +145,8 @@ const EditProfile = () => {
               <div className="changeTwo">
                 <img
                   src={
-                    editImg
-                      ? URL.createObjectURL(editImg)
+                    img
+                      ? URL.createObjectURL(img)
                       : "/assets/profileCover/DefaultProfile.jpg"
                   }
                   alt=""
