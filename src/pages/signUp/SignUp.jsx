@@ -16,35 +16,39 @@ function SignUp() {
   const handleRegister = async (e) => {
     console.log(img, "IMG");
     e.preventDefault();
-    const displayName = e.target[0].value;
-    const email = e.target[1].value;
-    const password = e.target[2].value;
+    if (img === null) {
+      alert("please add an image");
+    } else {
+      const displayName = e.target[0].value;
+      const email = e.target[1].value;
+      const password = e.target[2].value;
 
-    const res = await createUserWithEmailAndPassword(auth, email, password);
+      const res = await createUserWithEmailAndPassword(auth, email, password);
 
-    const storageRef = ref(storage, "usersImages/" + displayName);
-    const uploadTask = uploadBytesResumable(storageRef, img);
+      const storageRef = ref(storage, "usersImages/" + displayName);
+      const uploadTask = uploadBytesResumable(storageRef, img);
 
-    uploadTask.then(() => {
-      getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-        await updateProfile(res.user, {
-          displayName,
-          photoURL: downloadURL,
+      uploadTask.then(() => {
+        getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+          await updateProfile(res.user, {
+            displayName,
+            photoURL: downloadURL,
+          });
+
+          await setDoc(doc(db, "users", res.user.uid), {
+            uid: res.user.uid,
+            displayName,
+            email,
+            photoURL: downloadURL,
+          });
+
+          await setDoc(doc(db, "usersPosts", res.user.uid), { messages: [] });
+          // console.log(res.user);
         });
-
-        await setDoc(doc(db, "users", res.user.uid), {
-          uid: res.user.uid,
-          displayName,
-          email,
-          photoURL: downloadURL,
-        });
-
-        await setDoc(doc(db, "usersPosts", res.user.uid), { messages: [] });
-        // console.log(res.user);
       });
-    });
 
-    navigate("/enter");
+      navigate("/enter");
+    }
   };
 
   return (
