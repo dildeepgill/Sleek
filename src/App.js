@@ -9,7 +9,6 @@ import {
   Routes,
   
 } from "react-router-dom";
-import PopOut from "./components/friendsPopOut/PopOut";
 
 function App() {
   // const { currentUser } = useContext(AuthContext);
