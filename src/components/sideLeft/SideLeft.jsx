@@ -7,11 +7,15 @@ import Known from "../known/Known";
 import { Users } from "../../data";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Link } from "react-router-dom";
-function SideLeft() {
+
+function SideLeft({ openMessenger, openPop }) {
   return (
     <div className="sideLeft">
       <div className="sideLeftContainer">
-        <IconLeft icon={<ChatIcon />} text="Messenger" />
+        <IconLeft
+          icon={<ChatIcon onClick={openMessenger} />}
+          text="Messenger"
+        />
         <IconLeft icon={<LightbulbIcon />} text="Change Theme" />
         <IconLeft icon={<NotificationsIcon />} text="Notfications" />
         <Link to="/enter">
@@ -22,13 +26,12 @@ function SideLeft() {
           />
         </Link>
 
-        {/* <button className="sideLeftBtn">Post</button> */}
         <hr className="sideLeftHr" />
 
         <ul className="sideLeftKnown">
           <p className="sideLeftBf">Best Friends</p>
           {Users.map((name) => (
-            <Known key={name.id} user={name} />
+            <Known key={name.id} user={name} openPop={openPop} />
           ))}
         </ul>
       </div>

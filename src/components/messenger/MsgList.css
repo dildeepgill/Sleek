@@ -1,0 +1,136 @@
+.msgList {
+  border-right: 2px solid #ebe7fb;
+  padding: 0 36px 0 0px;
+}
+
+.msgListHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px;
+}
+.contentMainOneSending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.msgListInput {
+  background-color: #fff;
+  border: none;
+  padding: 12px 12px;
+  outline: none;
+  width: 79%;
+  padding-right: 0;
+}
+
+.msgListBtn {
+  height: 46px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 20%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.msgListItems {
+  margin-top: 31px;
+  overflow: auto;
+  max-height: calc(100vh - calc(100vh / 2));
+}
+
+.MsgListItemsTwo {
+  display: flex;
+  border-bottom: 1px solid #ebe7fb;
+  padding-bottom: 11px;
+  margin-top: 11px;
+  cursor: pointer;
+  padding: 11px 11px 11px 21px;
+  transition: all 0.3s cubic-bezier(0.88, 0.19, 0.37, 1.11);
+  transform: scale(0);
+  animation-name: showIn;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: cubic-bezier(0.88, 0.19, 0.37, 1.11);
+  animation-fill-mode: both; /* or: backwards, both, none */
+  animation-delay: 0.1s;
+}
+@keyframes showIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.MsgListItemsTwo:first-child {
+  margin-top: 0;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  margin-right: 20px;
+  position: relative;
+}
+
+.avatar img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.MsgListItemsTwo .userMeta p {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+}
+.MsgListItemsTwo .userMeta span {
+  margin: 0;
+  padding: 0;
+  color: #ceccd3;
+  font-weight: 400;
+  font-size: 12px;
+  display: block;
+}
+.MsgListItemsTwo:hover,
+.MsgListItemsTwo.active {
+  background: #fff;
+
+  border-radius: 10px;
+}
+.isOnline {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(221, 221, 221, 0.88);
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.isOnline.active {
+  background-color: rgb(20, 135, 53);
+}
+.avatar-img {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 568px) {
+  .msgList {
+    display: none;
+  }
+  .contentMainOne {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 5px 5px;
+  }
+}

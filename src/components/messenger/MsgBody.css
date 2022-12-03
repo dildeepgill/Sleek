@@ -1,0 +1,7 @@
+.MsgBody {
+  flex-grow: 1;
+  background-color: rgb(134, 77, 134);
+  border-radius: 8px;
+  margin: 18px 18px;
+  display: flex;
+}

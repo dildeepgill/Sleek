@@ -7,6 +7,7 @@ import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import moment from "moment/moment";
 function UserPost(props) {
+  // shared is object of data
   const shared = props.shared;
   const [commentMode, setCommentMode] = useState(false);
   const [readyToDelete, setReadyToDelete] = useState(false);

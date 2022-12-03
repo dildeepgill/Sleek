@@ -1,3 +1,4 @@
+
 export const Users = [
     {
       id: 1,
@@ -178,4 +179,133 @@ export const Users = [
     //   like: "52",
     //   comment: "6",
     // },
+    
+  ]
+  export const AllChatUsers = [
+    {
+      image:
+        "/assets/face1.jpg",
+      id: 1,
+      name: "Sunny Lehal",
+      active: true,
+      isOnline: true,
+      Time:"now"
+    },
+    {
+      image:
+      "/assets/face2.jpg",
+      id: 2,
+      name: "Harmeet Hans",
+      active: false,
+      isOnline: false,
+      Time:"24 mins ago"
+    },
+    {
+      image:
+      "/assets/face3.jpg",
+      id: 3,
+      name: "Japnam Gill",
+      active: false,
+      isOnline: false,
+      Time:"1 hour ago"
+    },
+    {
+      image:
+        "/assets/face4.jpg",
+      id: 4,
+      name: "Karamvir Sekhon",
+      active: false,
+      isOnline: true,
+      Time:"now"
+    },
+    {
+      image:
+      "/assets/face5.jpg",
+      id: 5,
+      name: "Navdeep Gill",
+      active: false,
+      isOnline: false,
+      Time:"30 minuites ago"
+    },
+    // {
+    //   image:
+    //     "https://huber.ghostpool.com/wp-content/uploads/avatars/3/596dfc2058143-bpfull.png",
+    //   id: 6,
+    //   name: "Kayley Mellor",
+    //   active: false,
+    //   isOnline: true,
+    // },
+    // {
+    //   image:
+    //     "https://www.paintingcontest.org/components/com_djclassifieds/assets/images/default_profile.png",
+    //   id: 7,
+    //   name: "Hasan Mcculloch",
+    //   active: false,
+    //   isOnline: true,
+    // },
+    // {
+    //   image:
+    //     "https://auraqatar.com/projects/Anakalabel/media//vesbrand/designer4.jpg",
+    //   id: 8,
+    //   name: "Autumn Mckee",
+    //   active: false,
+    //   isOnline: false,
+    // },
+    // {
+    //   image:
+    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSM6p4C6imkewkCDW-9QrpV-MMAhOC7GnJcIQ&usqp=CAU",
+    //   id: 9,
+    //   name: "Allen Woodley",
+    //   active: false,
+    //   isOnline: true,
+    // },
+    // {
+    //   image: "https://pbs.twimg.com/profile_images/770394499/female.png",
+    //   id: 10,
+    //   name: "Manpreet David",
+    //   active: false,
+    //   isOnline: true,
+    // },
   ];
+  
+
+
+  export const ChatItems = [
+    {
+      key: 1,
+      image:
+        "https://pbs.twimg.com/profile_images/1116431270697766912/-NfnQHvh_400x400.jpg",
+      type: "",
+      msg: "Hey, how's it going?",
+    },
+    {
+      key: 2,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU",
+      type: "other",
+      msg: "Good! how are you?.",
+    },
+    {
+      key: 3,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU",
+      type: "other",
+      msg: "Great I heard you landed THE JUNIOR DEV POSITION!",
+    },
+    {
+      key: 4,
+      image:
+        "https://pbs.twimg.com/profile_images/1116431270697766912/-NfnQHvh_400x400.jpg",
+      type: "",
+      msg: "yea FINALLY, I knew I would !",
+    },
+    {
+      key: 5,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTA78Na63ws7B7EAWYgTr9BxhX_Z8oLa1nvOA&usqp=CAU",
+      type: "other",
+      msg: "That is so awesome CONGRATS",
+    },
+  
+  ];
+  

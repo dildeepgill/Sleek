@@ -54,7 +54,7 @@ function Enter() {
                 <Link to="/">
                   <button className="enterLogBtn">Create a New Account</button>
                 </Link>
-                {error && <span>Error</span>}
+                {error && <span>Wrong email or password</span>}
               </form>
             </div>
           </div>

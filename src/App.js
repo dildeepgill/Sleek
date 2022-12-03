@@ -9,6 +9,7 @@ import {
   Routes,
   
 } from "react-router-dom";
+import PopOut from "./components/friendsPopOut/PopOut";
 
 function App() {
   // const { currentUser } = useContext(AuthContext);
@@ -60,6 +61,7 @@ return (
           <Route path="enter" element={ <Enter/>} />
           <Route path="/home" element={ <HomePage/>} />
           <Route path="/" element={<SignUp/>} />
+
      </Routes> 
   </AuthContextProvider>
       

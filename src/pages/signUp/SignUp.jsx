@@ -21,9 +21,7 @@ function SignUp() {
       const displayName = e.target[0].value;
       const email = e.target[1].value;
       const password = e.target[2].value;
-
       const res = await createUserWithEmailAndPassword(auth, email, password);
-
       const storageRef = ref(storage, "usersImages/" + displayName);
       const uploadTask = uploadBytesResumable(storageRef, img);
 
@@ -44,7 +42,10 @@ function SignUp() {
           await setDoc(doc(db, "usersPosts", res.user.uid), { messages: [] });
         });
       });
+      console.log(res.user);
+
       setError(true);
+
       navigate("/enter");
     }
   };
