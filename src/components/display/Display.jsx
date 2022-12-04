@@ -47,6 +47,7 @@ function Display() {
                 shared={name}
                 updatePost={updatePostData}
                 deletePost={removePost}
+                addNewPost={addNewPost}
               />
             );
           })
@@ -55,14 +56,14 @@ function Display() {
         )}
 
         {/* add our posts array here because they are going to be displayed here */}
-        {Posts.map((name) => (
+        {/* {Posts.map((name) => (
           <UserPost
             key={name.id}
             shared={name}
             updatePost={updatePostData}
             deletePost={removePost}
           />
-        ))}
+        ))} */}
       </div>
     </div>
   );

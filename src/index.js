@@ -2,15 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import {  LightModeProvider} from './context/lightModeContent';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
   <React.StrictMode>
-    <BrowserRouter>   
+    <LightModeProvider> 
+      <BrowserRouter>   
       <App />
     </BrowserRouter>
+    </LightModeProvider>
+   
   </React.StrictMode>
 );
 

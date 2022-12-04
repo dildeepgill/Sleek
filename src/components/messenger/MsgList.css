@@ -72,14 +72,24 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-
   margin-right: 20px;
   position: relative;
 }
 
 .avatar img {
-  max-width: 100%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: auto;
   object-fit: cover;
+  border: 3px solid white;
+}
+
+.avatar-img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .MsgListItemsTwo .userMeta p {
@@ -108,8 +118,8 @@
   width: 10px;
   height: 10px;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -7px;
+  right: -5px;
   background-color: rgba(221, 221, 221, 0.88);
   border-radius: 50%;
   border: 2px solid #fff;
@@ -117,11 +127,8 @@
 .isOnline.active {
   background-color: rgb(20, 135, 53);
 }
-.avatar-img {
-  overflow: hidden;
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
+.avatar-img p {
+  padding: 10px;
 }
 
 @media (max-width: 568px) {

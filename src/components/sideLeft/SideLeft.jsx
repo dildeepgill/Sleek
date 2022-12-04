@@ -1,23 +1,27 @@
 import ChatIcon from "@mui/icons-material/Chat";
-import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import LogoutIcon from "@mui/icons-material/Logout";
 import "./SideLeft.css";
 import IconLeft from "../iconLeft/IconLeft";
 import Known from "../known/Known";
 import { Users } from "../../data";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import { Link } from "react-router-dom";
+import { LightModeContext } from "../../context/lightModeContent";
+import { useContext } from "react";
 
 function SideLeft({ openMessenger, openPop }) {
+  const { dispatch } = useContext(LightModeContext);
   return (
-    <div className="sideLeft">
+    <div className="sideLeft ">
       <div className="sideLeftContainer">
         <IconLeft
           icon={<ChatIcon onClick={openMessenger} />}
           text="Messenger"
         />
-        <IconLeft icon={<LightbulbIcon />} text="Change Theme" />
-        <IconLeft icon={<NotificationsIcon />} text="Notfications" />
+        <span onClick={() => dispatch({ type: "TOGGLE" })}>
+          {/* <IconLeft icon={<LightbulbIcon />} text="Change Theme" /> */}
+        </span>
+        {/* <IconLeft icon={<NotificationsIcon />} text="Notfications" /> */}
+
         <Link to="/enter">
           <IconLeft
             icon={<LogoutIcon />}

@@ -9,58 +9,21 @@ import {
   Routes,
   
 } from "react-router-dom";
+import "./styles/lightMode.css"
+import { useContext } from "react";
+import { LightModeContext } from "./context/lightModeContent";
 
 function App() {
-  // const { currentUser } = useContext(AuthContext);
-
-  // const AuthRoute = ({ children }) => {
-  //   if (!currentUser) {
-  //     return <Navigate to="/enter" />;
-  //   }
-  //   return children;
-  // };
-
-//    {/* <Routes>   
-      
-//           <Route path="enter" element={ <Enter/>} />
-//           <Route path="/home" element={ <HomePage/>} />
-//           <Route path="/" element={<SignUp/>} />
-        
-//      </Routes> */}
-// {/*       
-//     </div> */}
-
-    // const router = createBrowserRouter([
-     
-    //   {
-    //     path: "/",
-    //     element: <SignUp/>
-    //   },
-    //   {
-    //     path: "/home",
-    //   element: (
-    //     <AuthRoute>
-    //       <HomePage/>
-    //     </AuthRoute>
-    //   ),
-    //   },
-    //   {
-    //     path: "/enter",
-    //     element: <Enter/>
-    //   },
-    // ]);
    
-   
-
+const {LightMode}= useContext(LightModeContext)
 return (
   
-  <div className="app">
+  <div className={LightMode? "app lightMode ": "app"}>
   <AuthContextProvider>
     <Routes>   
           <Route path="enter" element={ <Enter/>} />
           <Route path="/home" element={ <HomePage/>} />
           <Route path="/" element={<SignUp/>} />
-
      </Routes> 
   </AuthContextProvider>
       

@@ -8,12 +8,14 @@ import { AuthContext } from "../../context/AuthContext";
 import moment from "moment/moment";
 function UserPost(props) {
   // shared is object of data
+
   const shared = props.shared;
   const [commentMode, setCommentMode] = useState(false);
   const [readyToDelete, setReadyToDelete] = useState(false);
   const [liked, setLiked] = useState(false);
   const commentRef = useRef(null);
   const { currentUser } = useContext(AuthContext);
+
   //function to post comment here
   const postComment = (e) => {
     e.preventDefault();
