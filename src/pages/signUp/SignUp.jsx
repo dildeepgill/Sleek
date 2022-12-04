@@ -45,7 +45,6 @@ function SignUp() {
           });
         });
       } catch (err) {
-        console.log(err, "ERRROR");
         setError(true);
       }
 
