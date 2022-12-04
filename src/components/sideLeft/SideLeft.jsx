@@ -15,14 +15,14 @@ function SideLeft({ openMessenger, openPop }) {
       <div className="sideLeftContainer">
         <div className="IconLeftMsgbtn" onClick={openMessenger}>
           <IconLeft icon={<ChatIcon />} />
-          <div>Messenger</div>
+          <div className="disapper">Messenger</div>
           <span onClick={() => dispatch({ type: "TOGGLE" })}></span>
         </div>
 
         <Link to="/enter">
           <div className="IconLeftMsgbtn">
             <IconLeft icon={<LogoutIcon />} style={{ cursor: "pointer" }} />
-            <div>Logout</div>
+            <div className="disapper">Logout</div>
           </div>
         </Link>
 

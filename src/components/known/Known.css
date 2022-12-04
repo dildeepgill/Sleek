@@ -21,4 +21,12 @@
   .sideLeftName {
     display: none;
   }
+  .sideLeftKnown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .disapper {
+    display: none;
+  }
 }

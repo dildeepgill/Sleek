@@ -10,15 +10,22 @@ import {
   
 } from "react-router-dom";
 import "./styles/lightMode.css"
-import { useContext } from "react";
-import { LightModeContext } from "./context/lightModeContent";
+import { useState } from "react";
+
 
 function App() {
+  const [loading,setLoading] = useState(true)
+  const spinner=document.getElementById('spinner')
+  if(spinner){
+    setTimeout(()=>{
+      spinner.style.display="none"
+      setLoading(false)
+    },3000)
+  }
    
-const {LightMode}= useContext(LightModeContext)
 return (
   
-  <div className={LightMode? "app lightMode ": "app"}>
+  !loading && <div>
   <AuthContextProvider>
     <Routes>   
           <Route path="enter" element={ <Enter/>} />
@@ -26,8 +33,6 @@ return (
           <Route path="/" element={<SignUp/>} />
      </Routes> 
   </AuthContextProvider>
-      
-
   </div>
  
 );
