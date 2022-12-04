@@ -13,21 +13,17 @@ function SideLeft({ openMessenger, openPop }) {
   return (
     <div className="sideLeft ">
       <div className="sideLeftContainer">
-        <IconLeft
-          icon={<ChatIcon onClick={openMessenger} />}
-          text="Messenger"
-        />
-        <span onClick={() => dispatch({ type: "TOGGLE" })}>
-          {/* <IconLeft icon={<LightbulbIcon />} text="Change Theme" /> */}
-        </span>
-        {/* <IconLeft icon={<NotificationsIcon />} text="Notfications" /> */}
+        <div className="IconLeftMsgbtn" onClick={openMessenger}>
+          <IconLeft icon={<ChatIcon />} />
+          <div>Messenger</div>
+          <span onClick={() => dispatch({ type: "TOGGLE" })}></span>
+        </div>
 
         <Link to="/enter">
-          <IconLeft
-            icon={<LogoutIcon />}
-            style={{ cursor: "pointer" }}
-            text="Logout"
-          />
+          <div className="IconLeftMsgbtn">
+            <IconLeft icon={<LogoutIcon />} style={{ cursor: "pointer" }} />
+            <div>Logout</div>
+          </div>
         </Link>
 
         <hr className="sideLeftHr" />

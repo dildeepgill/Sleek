@@ -52,6 +52,17 @@ a {
 .sideLeftBf {
   margin-bottom: 35px;
 }
+.IconLeftMsgbtn {
+  display: flex;
+  align-items: center;
+}
+
+.IconLeftMsgbtn:hover {
+  background-color: rgb(134, 77, 134);
+  color: black;
+  border-radius: 9px;
+  cursor: pointer;
+}
 
 @media (max-width: 768px) {
   .sideLeft {

@@ -4,6 +4,7 @@
   align-items: center;
   font-weight: 400;
   border-radius: 9px;
+  cursor: pointer;
 }
 
 .iconLeftText {
@@ -13,7 +14,6 @@
 .iconLeftName {
   font-weight: 800;
 }
-
 .iconLeft:hover {
   background-color: rgb(134, 77, 134);
 

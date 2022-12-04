@@ -20,6 +20,7 @@ function HomePage() {
   function openPop(e) {
     setOpen(!open);
     setWhichFriennd(e.target);
+
     setShowMessenger(false);
   }
   function close() {
