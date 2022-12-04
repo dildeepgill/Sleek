@@ -16,35 +16,38 @@ function SignUp() {
   const handleRegister = async (e) => {
     e.preventDefault();
     if (img === null) {
-      alert("please add an image");
+      alert(
+        "please add an image and you can not use the same email twice to signup :)"
+      );
     } else {
       const displayName = e.target[0].value;
       const email = e.target[1].value;
       const password = e.target[2].value;
+
       const res = await createUserWithEmailAndPassword(auth, email, password);
       const storageRef = ref(storage, "usersImages/" + displayName);
       const uploadTask = uploadBytesResumable(storageRef, img);
+      try {
+        uploadTask.then(() => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(res.user, {
+              displayName,
+              photoURL: downloadURL,
+            });
+            await setDoc(doc(db, "users", res.user.uid), {
+              uid: res.user.uid,
+              displayName,
+              email,
+              photoURL: downloadURL,
+            });
 
-      uploadTask.then(() => {
-        getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-          await updateProfile(res.user, {
-            displayName,
-            photoURL: downloadURL,
+            await setDoc(doc(db, "usersPosts", res.user.uid), { messages: [] });
           });
-
-          await setDoc(doc(db, "users", res.user.uid), {
-            uid: res.user.uid,
-            displayName,
-            email,
-            photoURL: downloadURL,
-          });
-
-          await setDoc(doc(db, "usersPosts", res.user.uid), { messages: [] });
         });
-      });
-      console.log(res.user);
-
-      setError(true);
+      } catch (err) {
+        console.log(err, "ERRROR");
+        setError(true);
+      }
 
       navigate("/enter");
     }
