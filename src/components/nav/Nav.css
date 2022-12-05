@@ -95,6 +95,11 @@
   display: none !important;
 }
 
+.navMsg {
+  display: none !important;
+  cursor: pointer;
+}
+
 @media (max-width: 1000px) {
   .navOne {
     flex: 2;
@@ -156,10 +161,17 @@
   }
   .navIcons {
     align-items: center;
-    gap: 6px;
   }
   .navIcons {
-    width: 28%;
+    width: 54%;
+  }
+  .navMsg {
+    display: block !important;
+    /* gap: 2px; */
+    justify-content: space-between;
+  }
+  .navImg {
+    margin: 0;
   }
 }
 

@@ -4,8 +4,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
+import ChatIcon from "@mui/icons-material/Chat";
 
-function Nav() {
+function Nav({ openMessenger }) {
   const { currentUser } = useContext(AuthContext);
   return (
     <div className="nav">
@@ -23,6 +24,11 @@ function Nav() {
           <span className="navLink">Home</span>
         </div>
         <img src={currentUser.photoURL} alt="person face" className="navImg" />
+        <ChatIcon
+          className="navMsg"
+          onClick={openMessenger}
+          // style={{ display: "none" }}
+        />
         <Link to="/enter">
           <LogoutIcon
             style={{ cursor: "pointer" }}

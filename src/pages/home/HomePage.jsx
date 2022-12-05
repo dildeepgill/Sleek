@@ -33,7 +33,7 @@ function HomePage() {
   return (
     <>
       <div className="homePage">
-        <Nav />
+        <Nav openMessenger={openMessenger} />
         <div className="container">
           <SideLeft openMessenger={openMessenger} openPop={openPop} />
           <Display />
