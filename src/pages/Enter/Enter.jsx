@@ -5,18 +5,24 @@ import "./Enter.css";
 import { Link, useNavigate } from "react-router-dom";
 function Enter() {
   const [error, setError] = useState(false);
+  // hook to allow navigation within the app
   const navigate = useNavigate();
+
+  // handleLogin is an async function that is called when the form is submitted
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    // get the email and password values from the form
     const email = e.target[0].value;
     const password = e.target[1].value;
 
     try {
+      // call the signInWithEmailAndPassword function to log in
       await signInWithEmailAndPassword(auth, email, password);
+      // navigate to the "/home" route
       navigate("/home");
     } catch (error) {
+      // if an error occurs, set the error state to true
       setError(true);
     }
   };

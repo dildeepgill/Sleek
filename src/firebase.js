@@ -28,12 +28,12 @@ import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDVWy8Q9cQ_2te_feZVJ9da-zVAohZyOo0",
-  authDomain: "social-f665c.firebaseapp.com",
-  projectId: "social-f665c",
-  storageBucket: "social-f665c.appspot.com",
-  messagingSenderId: "20937386669",
-  appId: "1:20937386669:web:7845f89ce993f81637b424"
+  apiKey: "AIzaSyC6npHWr7c9tKEVPFLuRCPWFkYinXrx_v4",
+  authDomain: "social-march.firebaseapp.com",
+  projectId: "social-march",
+  storageBucket: "social-march.appspot.com",
+  messagingSenderId: "207811389305",
+  appId: "1:207811389305:web:e10335611a463ca68571a8"
 };
 
 // Initialize Firebase

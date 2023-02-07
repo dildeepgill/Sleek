@@ -12,17 +12,20 @@ function MsgContent({ closeMsg }) {
   function scrollToBottom() {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   }
-
+  // Function to display a form
   function displayForm(e) {
     e.preventDefault();
+    // If the input is empty, show an alert asking the user to type something
     if (input === "") {
       alert("please type something :)");
     }
+    // Create an object with properties "image", "key", and "msg"
     const currentInput = {
       image: "../assets/face1.jpg",
       key: 10,
       msg: input,
     };
+    // Add the currentInput object to the "ChatItems" array
     ChatItems.push(currentInput);
     setInput("");
     scrollToBottom();

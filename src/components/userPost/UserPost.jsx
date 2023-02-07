@@ -7,8 +7,6 @@ import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import moment from "moment/moment";
 function UserPost(props) {
-  // shared is object of data
-
   const shared = props.shared;
   const [commentMode, setCommentMode] = useState(false);
   const [readyToDelete, setReadyToDelete] = useState(false);
@@ -16,57 +14,66 @@ function UserPost(props) {
   const commentRef = useRef(null);
   const { currentUser } = useContext(AuthContext);
 
-  //function to post comment here
+  // function to post a comment
   const postComment = (e) => {
     e.preventDefault();
-    const userComment = commentRef.current.value;
-    //some comment validation here
+    // getting the value of the comment from the DOM element referenced by commentRef
 
+    const userComment = commentRef.current.value;
+
+    // if user comment is an empty string, show an alert
     if (userComment === "") {
       alert("please write something :)");
     } else {
+      // creating an object for the new comment
       const commentObj = {
         name: currentUser.displayName,
         body: userComment,
         dateTime: moment().format("MMMM Do YYYY, h:mm:ss a"),
       };
+      // if comments is undefined, initialize comments as an array with the new comment
       if (shared.comments === undefined) {
-        //no current comments start with new comments array
         shared.comments = [commentObj];
       } else {
-        //unshift into current comments
+        // otherwise, add the new comment to the start of the comments array
+
         shared.comments.unshift(commentObj);
       }
+      // call the updatePost function from props to update the post
       props.updatePost(shared);
     }
   };
-
+  // function to toggle the readyToDelete state
   const openDeleteMenu = (e) => {
-    //code to enable delete menu, lets make a state for that too
     setReadyToDelete(!readyToDelete);
   };
-
+  // function to toggle the commentMode state
   const enableCommentInterface = (e) => {
-    //if commentMode is on then that comment div is visible where people will write their most virtuous thoughts
     setCommentMode(!commentMode);
   };
-
+  // function to delete the post
   const deleteThisPost = (e) => {
     e.preventDefault();
     props.deletePost(shared);
   };
-
+  // function to like or unlike the post
   const likeOrUnlike = (e) => {
-    //this function actually gives the post one more like or removes it if already liked.
+    // get the number of current likes and convert it to an integer
 
     let currentLikes = parseInt(shared.like);
+    // if the post is liked, decrement the number of likes by 1
+
     if (liked) {
       currentLikes -= 1;
     } else {
+      // otherwise, increment the number of likes by 1
       currentLikes += 1;
     }
-    //if button is liked then remove one to unlike
+    // update the like property of shared with the new number of likes
+
     shared.like = currentLikes;
+    // call the updatePost function from props to update the post
+
     props.updatePost(shared);
     setLiked(!liked);
   };

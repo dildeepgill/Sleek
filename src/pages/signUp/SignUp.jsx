@@ -13,20 +13,27 @@ function SignUp() {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
+  // Event handler function for the form submission
   const handleRegister = async (e) => {
     e.preventDefault();
+    // Check if an image has been selected
     if (img === null) {
       alert(
         "please add an image and you can not use the same email twice to signup :)"
       );
     } else {
+      // Retrieve the form field values
       const displayName = e.target[0].value;
       const email = e.target[1].value;
       const password = e.target[2].value;
 
+      // Create a new user with the email and password
       const res = await createUserWithEmailAndPassword(auth, email, password);
+      // Reference to the firebase storage location
       const storageRef = ref(storage, "usersImages/" + displayName);
+      // Upload the selected image to firebase storage
       const uploadTask = uploadBytesResumable(storageRef, img);
+      // Update the user's profile with the displayName and image URL
       try {
         uploadTask.then(() => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
@@ -34,20 +41,22 @@ function SignUp() {
               displayName,
               photoURL: downloadURL,
             });
+            // Set a document in firestore with the user's details
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName,
               email,
               photoURL: downloadURL,
             });
-
+            // Initialize the user's posts in firestore
             await setDoc(doc(db, "usersPosts", res.user.uid), { messages: [] });
           });
         });
       } catch (err) {
+        // Set the error state to true if an error occurs
         setError(true);
       }
-
+      // Navigate the user to the "enter" page
       navigate("/enter");
     }
   };

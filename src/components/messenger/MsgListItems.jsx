@@ -1,14 +1,19 @@
 import MsgAvatar from "./MsgAvatar";
 import "./MsgListItems.css";
 function MsgListItems(props) {
+  // function to select a chat and highlight it as active
+
   function selectChat(e) {
+    // loop through all the children of the parent node of the clicked element
     for (
       let index = 0;
       index < e.currentTarget.parentNode.children.length;
       index++
     ) {
+      // remove the active class from all the children
       e.currentTarget.parentNode.children[index].classList.remove("active");
     }
+    // add the active class to the clicked element
     e.currentTarget.classList.add("active");
   }
 

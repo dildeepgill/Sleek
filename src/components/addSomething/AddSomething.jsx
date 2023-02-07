@@ -12,25 +12,27 @@ function AddSomething(props) {
   const [input, setInput] = useState("");
   const [showEmojis, setShowEmojis] = useState(false);
 
-  //we just need to read whatever is in the input field.
+  // Create a reference for input element to access its value
   const inputRef = useRef(null);
+  // Create a reference for shared image to access its source
   const sharedImgRef = useRef(null);
-  //posts is going to be an object, no matter where it is initialised, its probably going to be placed in a parent component
-  //post={content:"hello",datetime:,likes:,dislikes}
 
-  //this function submits whatever the user posts
+  // submitPost function gets triggered when form is submitted
   const submitPost = (e) => {
     e.preventDefault();
+    // Get the value of input from the inputRef
     const postContent = inputRef.current.value;
+    // Set default value for photoSrc
     let photoSrc = "";
-    //logic to get photo
+    // If there's an image, get its source
     if (sharedImgRef.current != null) {
       photoSrc = sharedImgRef.current.src;
     }
-    //when we submit here there should be a default post object which is put inside the array posts
+    // If both postContent and photoSrc are empty, show an alert
     if (postContent === "" && photoSrc === "") {
       alert("please write something :) ");
     } else {
+      // Create an object with post data
       const currentPost = {
         displayName: currentUser.displayName,
         body: postContent,
@@ -42,18 +44,21 @@ function AddSomething(props) {
         title: "i love soccer",
         userId: 2,
       };
+      // Call the addToPosts prop function and pass the currentPost object
 
       props.addToPosts(currentPost);
-      //so now that this posts array has been made we will just make sure that the post is visible.
     }
     setInput("");
     setImg(null);
     setShowEmojis(false);
   };
+  // removeImage function sets the image state to null
+
   const removeImage = () => {
     setImg(null);
   };
 
+  // addEmoji function adds emoji to the input state
   const addEmoji = (e) => {
     let sym = e.unified.split("-");
     let codesArray = [];

@@ -4,35 +4,44 @@ import "./Display.css";
 import { Posts } from "../../data";
 import { useState } from "react";
 function Display() {
-  //posts has to be a useState coz it renders the page
   const [customPosts, setCustomPosts] = useState(Posts);
 
-  //write the function to updatePosts
+  // Function to add a new post to the beginning of the customPosts array
   const addNewPost = (post) => {
+    // Make a copy of the current customPosts array
     const currentPostsArray = [...customPosts];
+    // Add the new post to the beginning of the array
     currentPostsArray.unshift(post);
+    // Update the customPosts state with the new array
     setCustomPosts(currentPostsArray);
   };
 
+  // Function to update the data of a post in the customPosts array
   const updatePostData = (postToUpdate) => {
+    // Make a copy of the current customPosts array
     const currentPostsArray = [...customPosts];
+    // Filter through the array to find the post with matching body
+    // and update its data
     currentPostsArray.filter((item) => {
       if (postToUpdate.body === item.body) {
-        //this is the same post in the array
+        // Update the post's data
         item = postToUpdate;
       }
       return item;
     });
+    // Update the customPosts state with the new array
     setCustomPosts(currentPostsArray);
   };
-
+  // Function to remove a post from the customPosts array
   const removePost = (post) => {
+    // Make a copy of the current customPosts array
     const currentPostsArray = [...customPosts];
+    // Filter through the array to find the post that needs to be removed
+    // and create a new array without it
     const filteredArray = currentPostsArray.filter((item) => item !== post);
+    // Update the customPosts state with the new array
     setCustomPosts(filteredArray);
   };
-
-  //another function updatePosts should actually update the right post in the array based on what happens in the actual custom post here.
 
   return (
     <div className="display">
